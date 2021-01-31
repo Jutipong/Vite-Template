@@ -12,12 +12,18 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 // import NotFound from "./views/NotFound.vue";
 
 import HelloWorld from './components/HelloWorld.vue';
+import Test from './components/Test.vue'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: "/HelloWorld",
+    path: "/helloworld",
     name: "HelloWorld",
     component: HelloWorld,
+  },
+  {
+    path: "/Test",
+    name: "Test",
+    component: Test,
   },
   // {
   //   path: "/",

@@ -2,7 +2,10 @@
   <div>Msg: {{ msg }}</div>
   <div>Object: {{ obj }}</div>
   <div>Objdec:{{ obj2 }}</div>
-</template>
+  <br />
+  <hr />
+   <slot />
+</template> 
 
 <script lang="ts">
 import { defineComponent, reactive, ref } from "vue";

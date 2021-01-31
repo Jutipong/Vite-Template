@@ -13,9 +13,11 @@ export default defineComponent({
     const { currentRoute } = useRouter();
     const defaultLayout = "default";
 
-    const layout = computed(
-      () => `${currentRoute.value.meta.layout || defaultLayout}-layout`
-    );
+    const layout = computed(() => {
+      let result = `${currentRoute.value.meta.layout || defaultLayout}-layout`;
+      return result;
+    });
+    
 
     return {
       layout,
