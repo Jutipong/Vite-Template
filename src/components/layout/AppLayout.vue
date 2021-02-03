@@ -1,24 +1,29 @@
 <template>
-  <div>Msg: {{ msg }}</div>
-  <div>Object: {{ obj }}</div>
-  <div>Objdec:{{ obj2 }}</div>
-  <br />
-  <hr />
-   <slot />
-</template> 
+  <div class="flex h-screen bg-gray-200 font-roboto">
+    <Sidebar />
+
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <Header />
+
+      <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+        <div class="container fluid mx-auto px-2 py-2">
+          <slot />
+        </div>
+      </main>
+    </div>
+  </div>
+</template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "vue";
+import { defineComponent } from "vue";
+
+import Sidebar from "./Sidebar.vue";
+import Header from "./Header.vue";
 
 export default defineComponent({
-  setup() {
-    const msg = ref("Test");
-    const obj = reactive({ id: 1, name: "name", last: "last" });
-    const obj2 = reactive({ id: 1, name: "name", last: "last" });
-    return { msg, obj, obj2 };
+  components: {
+    Header,
+    Sidebar,
   },
 });
 </script>
-
-<style scoped>
-</style>
