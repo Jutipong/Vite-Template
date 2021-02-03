@@ -1,17 +1,10 @@
 <template>
   <div class="flex">
     <!-- Backdrop -->
-    <div
-      :class="isOpen ? 'block' : 'hidden'"
-      @click="isOpen = false"
-      class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"
-    ></div>
+    <div :class="isOpen ? 'block' : 'hidden'" @click="isOpen = false" class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
     <!-- End Backdrop -->
 
-    <div
-      :class="isOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-      class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-blue-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0"
-    >
+    <div :class="isOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'" class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-blue-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
       <div class="flex items-center justify-center mt-8">
         <div class="flex items-center">
           <!-- <svg class="h-12 w-12" viewBox="0 0 512 512" fill="none">
@@ -29,31 +22,26 @@
             />
           </svg> -->
 
-          <span
-            class="text-white text-2xl mx-2 font-semibold transform hover:scale-110 cursor-pointer"
-            >Template-Tailwind</span
-          >
+          <span class="text-white text-2xl mx-2 font-semibold transform hover:scale-105 cursor-pointer">Template-Tailwind</span>
         </div>
       </div>
-
       <nav class="mt-10">
-        <router-link
-          class="flex items-center duration-200 mt-4 py-2 px-6 border-l-4"
-          :class="[$route.name === 'Users' ? activeClass : inactiveClass]"
-          to="/test"
-        >
+        <router-link class="flex items-center duration-200 mt-4 py-2 px-6 border-l-4" :class="[$route.name === 'Test' ? activeClass : inactiveClass]" to="/Test">
           <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none">
-            <path
-              d="M2 10C2 5.58172 5.58172 2 10 2V10H18C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10Z"
-              fill="currentColor"
-            />
-            <path
-              d="M12 2.25195C14.8113 2.97552 17.0245 5.18877 17.748 8.00004H12V2.25195Z"
-              fill="currentColor"
-            />
+            <path d="M2 10C2 5.58172 5.58172 2 10 2V10H18C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10Z" fill="currentColor" />
+            <path d="M12 2.25195C14.8113 2.97552 17.0245 5.18877 17.748 8.00004H12V2.25195Z" fill="currentColor" />
           </svg>
           <span class="mx-4">Users</span>
         </router-link>
+
+        <router-link class="flex items-center duration-200 mt-1 py-2 px-6 border-l-4" :class="[$route.name === 'Hello' ? activeClass : inactiveClass]" to="/Hello">
+          <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none">
+            <path d="M2 10C2 5.58172 5.58172 2 10 2V10H18C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10Z" fill="currentColor" />
+            <path d="M12 2.25195C14.8113 2.97552 17.0245 5.18877 17.748 8.00004H12V2.25195Z" fill="currentColor" />
+          </svg>
+          <span class="mx-4">Hello World</span>
+        </router-link>
+
         <!-- 
         <router-link class="flex items-center duration-200 mt-4 py-2 px-6 border-l-4" :class="[$route.name === 'Dashboard' ? activeClass : inactiveClass]" to="/dashboard">
           <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none">
@@ -123,24 +111,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
-import { useSidebar } from "../../hooks/useSidebar";
+import { defineComponent, ref } from 'vue'
+import { useSidebar } from '../../hooks/useSidebar'
 
 export default defineComponent({
   setup() {
-    const { isOpen } = useSidebar();
-    const activeClass = ref(
-      "bg-gray-600 bg-opacity-25 text-gray-100 border-gray-100"
-    );
-    const inactiveClass = ref(
-      "border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100"
-    );
+    const { isOpen } = useSidebar()
+    const activeClass = ref('bg-gray-900 bg-opacity-20 text-gray-50 border-gray-100 hover:bg-gray-900 hover:bg-opacity-25 hover:text-gray-100 ')
+    const inactiveClass = ref('border-gray-900 text-gray-50 hover:bg-gray-900 hover:bg-opacity-25 hover:text-gray-100 transform hover:scale-105')
 
+    // const activeClass = ref('bg-gray-100 bg-opacity-200 text-gray-50 border-gray-100')
+    // const inactiveClass = ref('border-gray-900 text-gray-50 hover:bg-gray-900 hover:bg-opacity-25 hover:text-gray-100')
     return {
       isOpen,
       activeClass,
-      inactiveClass,
-    };
-  },
-});
+      inactiveClass
+    }
+  }
+})
 </script>

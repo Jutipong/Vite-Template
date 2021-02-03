@@ -16,8 +16,8 @@ import Test from './components/Test.vue'
 
 const routes: RouteRecordRaw[] = [
   {
-    path: "/helloworld",
-    name: "HelloWorld",
+    path: "/Hello",
+    name: "Hello",
     component: HelloWorld,
   },
   {

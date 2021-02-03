@@ -43,7 +43,7 @@ export default defineComponent({
   props: {
     msg: {
       type: String,
-      required: true
+      default:'ทดสอบ'
     }
   },
   setup: () => {
