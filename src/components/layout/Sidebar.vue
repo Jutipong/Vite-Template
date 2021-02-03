@@ -117,7 +117,7 @@ import { useSidebar } from '../../hooks/useSidebar'
 export default defineComponent({
   setup() {
     const { isOpen } = useSidebar()
-    const activeClass = ref('bg-gray-900 bg-opacity-20 text-gray-50 border-gray-100 hover:bg-gray-900 hover:bg-opacity-25 hover:text-gray-100 ')
+    const activeClass = ref('bg-gray-900 bg-opacity-20 text-gray-50 border-green-700 hover:bg-gray-900 hover:bg-opacity-25 hover:text-gray-100 ')
     const inactiveClass = ref('border-gray-900 text-gray-50 hover:bg-gray-900 hover:bg-opacity-25 hover:text-gray-100 transform hover:scale-105')
 
     // const activeClass = ref('bg-gray-100 bg-opacity-200 text-gray-50 border-gray-100')

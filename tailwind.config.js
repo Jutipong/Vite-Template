@@ -36,6 +36,7 @@ module.exports = {
       blue: colors.lightBlue,
       red: colors.rose,
       pink: colors.fuchsia,
+      green:colors.green
     },
     extend: {
       fontFamily: {
