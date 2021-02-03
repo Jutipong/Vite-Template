@@ -1,6 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require('tailwindcss/colors')
 
-const whitelist = [
+var whitelist = [
   "gray",
   "red",
   "orange",
@@ -30,11 +31,17 @@ module.exports = {
     },
   },
   theme: {
+    colors: {
+      gray: colors.coolGray,
+      blue: colors.lightBlue,
+      red: colors.rose,
+      pink: colors.fuchsia,
+    },
     extend: {
       fontFamily: {
         sans: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  // plugins: [require("@tailwindcss/custom-forms")],
+  plugins: [require("@tailwindcss/custom-forms")],
 };
